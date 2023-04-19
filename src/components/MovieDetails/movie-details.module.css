@@ -1,0 +1,42 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid black;
+}
+
+.poster {
+  width: 300px;
+  height: 400px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  flex: 1;
+}
+.additionalInfo {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.outlet {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.actor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 185px;
+  margin: 10px;
+}
+
+.actor img {
+  width: 100%;
+}
+
+.details {
+  text-align: center;
+}
