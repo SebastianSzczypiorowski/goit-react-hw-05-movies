@@ -18,7 +18,7 @@ const Reviews = () => {
     fetchReviews();
   }, [URL]);
 
-  async function removeHtmlTags(text) {
+  function removeHtmlTags(text) {
     return text.replace(/<[^>]+>/g, '');
   }
   return (
