@@ -9,10 +9,6 @@ const Reviews = () => {
 
   const [reviews, setReviews] = useState([]);
 
-  function removeHtmlTags(text) {
-    return text.replace(/<[^>]+>/g, '');
-  }
-
   useEffect(() => {
     const fetchReviews = async () => {
       const response = await axios.get(URL);
@@ -21,6 +17,10 @@ const Reviews = () => {
     };
     fetchReviews();
   }, [URL]);
+
+  async function removeHtmlTags(text) {
+    return text.replace(/<[^>]+>/g, '');
+  }
   return (
     <>
       {reviews.length !== 0
