@@ -9,6 +9,10 @@ const Reviews = () => {
 
   const [reviews, setReviews] = useState([]);
 
+  function removeHtmlTags(text) {
+    return text.replace(/<[^>]+>/g, '');
+  }
+
   useEffect(() => {
     const fetchReviews = async () => {
       const response = await axios.get(URL);
@@ -24,7 +28,7 @@ const Reviews = () => {
             return (
               <article key={review.id}>
                 <h2>Author: {review.author}</h2>
-                <p>{review.content}</p>
+                <p>{removeHtmlTags(review.content)}</p>
               </article>
             );
           })
