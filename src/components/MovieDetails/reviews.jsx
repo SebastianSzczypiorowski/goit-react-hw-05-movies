@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { idContext } from './movieDetails';
+import parse from 'html-react-parser';
+import React from 'react';
 
 import axios from 'axios';
 const Reviews = () => {
@@ -18,9 +20,10 @@ const Reviews = () => {
     fetchReviews();
   }, [URL]);
 
-  function removeHtmlTags(text) {
-    return text.replace(/<[^>]+>/g, '');
-  }
+  // function removeHtmlTags(text) {
+  //   return text.replace(/<[^>]+>/g, '');
+  // }
+
   return (
     <>
       {reviews.length !== 0
@@ -28,7 +31,7 @@ const Reviews = () => {
             return (
               <article key={review.id}>
                 <h2>Author: {review.author}</h2>
-                <p>{removeHtmlTags(review.content)}</p>
+                <p>{parse(review.content)}</p>
               </article>
             );
           })
